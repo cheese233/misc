@@ -1,11 +1,9 @@
 title: Misc
-description: 
+description:
 theme: just-the-docs
 
 url: https://misc.c23.me
-favicon_ico: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/1f9c0.png"
 mermaid:
   version: "latest"
-
 # aux_links:
 #   Template Repository: https://github.com/just-the-docs/just-the-docs-template
