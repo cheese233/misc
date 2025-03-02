@@ -1,5 +1,6 @@
 ---
 title: Running Visual Studio Code on LXC
+parent: HomeLab Setup
 ---
 
 VSCode's service install script force its tunnel running in unprivileged systemd, which cannot running in lxc. 
