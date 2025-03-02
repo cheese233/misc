@@ -1,6 +1,33 @@
 title: Misc
 description:
 theme: just-the-docs
+permalink: pretty
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "default"
+
+exclude:
+  # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.gemspec"
+  - "*.gem"
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - README.md
 
 url: https://misc.c23.me
 mermaid:
