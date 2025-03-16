@@ -14,6 +14,6 @@ $ xl pci-assignable-list # check if the device reassignable
 0000:00:02.0
 $ xe vm-param-set other-config:pci=0/0000:00:02.0 uuid=... # and mount!
 ```
-[^](https://wiki.xenproject.org/wiki/Xen_PCI_Passthrough)
+<a href="https://wiki.xenproject.org/wiki/Xen_PCI_Passthrough" target="_blank">^</a>
 
 ---
