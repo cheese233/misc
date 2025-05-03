@@ -34,4 +34,4 @@ mermaid:
   version: "latest"
 aux_links:
   "Edit":
-    - "https://vscode.dev/github/cheese233/misc"
+    - "https://vscode.dev/github/cheese233/misc/{{page.relative_path}}"
