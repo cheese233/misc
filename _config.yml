@@ -32,6 +32,3 @@ exclude:
 url: https://misc.c23.me
 mermaid:
   version: "latest"
-aux_links:
-  "Edit":
-    - "https://vscode.dev/github/cheese233/misc/{{page.relative_path}}"
