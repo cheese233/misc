@@ -4,6 +4,7 @@ title: A C preprocessor marco generator
 An experiment using Elixir, generates nothing but a mess.
 
 ```elixir
+
 words =
   IO.gets("here puts the string: ")
   |> String.trim()
@@ -12,7 +13,7 @@ words =
 
 file = File.open!("nothing.c", [:write])
 
-freopen = file #:stdio
+freopen = file
 
 IO.puts(freopen, ~S<
 #define MSG_HELPER(...) #__VA_ARGS__
@@ -30,9 +31,17 @@ freq =
 
 IO.puts(freopen, "#define _s(x) \\n" <> Enum.at(words, 0) <> " x")
 
+defmodule ToHex do
+  def to_hex(num) when is_integer(num) do
+    num
+    |> Integer.to_string(16)
+    |> String.downcase()
+  end
+end
+
 freq
 |> Enum.each(fn {word, idx} ->
-  IO.puts(freopen, "#define _#{Base.encode16(<<idx>>)}(x) #{word} x")
+  IO.puts(freopen, "#define _#{ToHex.to_hex(idx)}(x) #{word} x")
 end)
 
 IO.puts(freopen, "#define _e() " <> Enum.at(words, -1) <> "\\n")
@@ -56,7 +65,7 @@ defmodule MainQuoteGenerater do
         k == Enum.at(words, idx)
       end)
 
-    IO.write(freopen, "_#{Base.encode16(<<v>>)}(")
+    IO.write(freopen, "_#{ToHex.to_hex(v)}(")
     gen(freq, words, freopen, idx + 1)
     IO.write(freopen, ")")
   end
