@@ -15,7 +15,7 @@ uuid ( RO)           : 17b62764-f979-7226-111c-deea6f9b530e
 # !!! On XCP-ng 8.2:
 # $ xl pci-assignable-add 00:02.0
 # upd: on XCP-ng 8.3:
-$ xe pci-enable-dom0-access uuid=17b62764-f979-7226-111c-deea6f9b530e
+$ xe pci-disable-dom0-access uuid=17b62764-f979-7226-111c-deea6f9b530e
 
 $ xl pci-assignable-list # check if the device reassignable
 0000:00:02.0
@@ -23,6 +23,10 @@ $ xl pci-assignable-list # check if the device reassignable
 $ xe vm-param-set other-config:pci=0/0000:00:02.0 uuid=... # and mount!
 
 ```
-<a href="https://wiki.xenproject.org/wiki/Xen_PCI_Passthrough" target="_blank">^1</a> <a href="https://docs.xcp-ng.org/compute/" target="_blank">^2</a> 
+[^1] [^2]
 
 ---
+
+[^1]: https://wiki.xenproject.org/wiki/Xen_PCI_Passthrough
+
+[^2]: https://docs.xcp-ng.org/compute/
